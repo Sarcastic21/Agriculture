@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true, limit: "10mb" })); // Increase URL-
 
 // Configure CORS
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://your-live-domain.com"], // Allow specific origins
+  origin: ["http://localhost:3000", "https://bucolic-baklava-a91df7.netlify.app"], // Allow specific origins
   methods: "GET,POST,PUT,DELETE", // Allow specific HTTP methods
   credentials: true, // Allow cookies (if needed)
 };
