@@ -1,0 +1,85 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .header {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+  }
+  
+  .queryCard {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .queryHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .date {
+    color: #7f8c8d;
+    font-size: 0.9em;
+  }
+  
+  .queryContent {
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .repliesSection {
+    margin-top: 20px;
+    border-top: 1px solid #ecf0f1;
+    padding-top: 15px;
+  }
+  
+  .reply {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .replyDate {
+    color: #7f8c8d;
+    font-size: 0.8em;
+    display: block;
+    margin-top: 5px;
+  }
+  
+  .replyForm {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .replyInput {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  .replyButton {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .replyButton:hover {
+    background: #2980b9;
+  }

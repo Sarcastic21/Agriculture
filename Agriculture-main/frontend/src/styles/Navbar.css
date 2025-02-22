@@ -1,0 +1,182 @@
+*{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(160deg, #4caf50, #45a049); /* Dark background */
+    padding: 15px 30px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo{
+    color: #fff;
+    width: 120px;
+    height: auto;
+  }
+  .nav-buttons2 {
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+    transition: background-color 0.3s, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  .nav-logo {
+    width: 50px; /* Adjust size */
+    height: 50px;
+    border-radius: 50%; /* Makes it circular */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid white;
+  }
+  .weather-icon{
+    color: rgb(255, 204, 0);
+  }
+  .logo9{
+    display: flex;
+  }
+  .nav-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  }
+  .logo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    margin-top: 1vh;
+    margin-left: 1vw;
+  }
+  .nav-buttons {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+   
+  }
+  .navbar-link2 {
+    color: #2b7a0b;
+    font-size: 22px;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+  }
+
+  .navbar-link {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+  }
+  
+  .navbar-link:hover {
+    background-color: #ffffff; /* Red color for hover effect */
+    color: #2b7a0b;
+    transform: scale(1.1);
+  }
+  .navbar-link2:hover {
+    background-color: #ffffff; /* Red color for hover effect */
+    color: #1b5a02;
+    transform: scale(1);
+    text-decoration: underline;
+  }
+  
+  .navbar-link:active {
+    transform: scale(0.98);
+  }
+  .hamburger-icon{
+    color: #f4f4f4;
+    font-size: 26px;
+  }
+  @media (min-width: 768px) {
+
+    .hamburger-icon {
+display: none;   
+ }
+}
+  
+  
+  @media (max-width: 768px) {
+
+    .nav-buttons2 {
+display: none;   
+ }
+    .navbar {
+      padding: 10px 20px;
+    }
+  
+    .logo {
+      width: 100%;
+    }
+  
+    .nav-buttons {
+      gap: 10px;
+    }
+  
+    .navbar-link {
+      font-size: 16px;
+    }
+  }
+  @media (min-width: 768px) {
+
+    .nav-buttons1 {
+display: none;   
+ }
+}
+/* Mobile Menu */
+.nav-buttons1 {
+  display: none;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 15px;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3sease-in-out;
+}
+
+.nav-buttons1.open {
+  display: flex;
+}
+
+/* Mobile Menu Links */
+.navbar-link1 {
+  color: #2b7a0b; /* Green text */
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+  border-radius: 5px;
+}
+
+.navbar-link1:hover {
+  background-color: #f4f4f4; /* Light gray hover */
+  color: #1b5a02; /* Darker green on hover */
+  transform: scale(1.05);
+}
+
+/* Close animation */
+.nav-buttons1.close {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Styles */
+
+
+.footer-image{
+  height: 20vh;
+  width: 50%;
+}

@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+   font-family: Arial, Helvetica, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+}
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+
