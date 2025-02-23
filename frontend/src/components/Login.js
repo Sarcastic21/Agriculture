@@ -70,7 +70,7 @@ const Login = () => {
 
           {/* Submit button with loading spinner */}
           <button type="submit" className="submit-btn" disabled={loading}>
-            {loading ? <div className="spinner"></div> : "Submit"}
+            {loading ? <div className="spinner"></div> : "Login"}
           </button>
         </form>
 
