@@ -356,24 +356,42 @@
     border-radius: 5px;
     object-fit: cover;
   }
-  .category-filter2, 
-.price-filter2, 
-label {
-  font-size: 18px;
+  .category-filter2 {
+    margin-bottom: 1vh;
+    border: 2px solid #eee;
+    font-size: 18px;
     background: #ffffff;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
-    margin-left: 1vw;
+    gap: 10px;
 }
 
-.category-filter2, 
-label {
-    gap: 10px;
-    color: #222222;
-    display: flex;
-    font-weight: 500; /* Enhances text visibility */
+.category-filter2 label {
+    font-weight: 500;
+    color: #a7a7a7;
+}
+
+#categoryDropdown {
+  color:#a7a7a7 ;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+/* Responsive - Stack on mobile */
+@media (max-width: 768px) {
+    .category-filter2 {
+        display: block;
+        margin-left: 0;
+    }
+
+    #categoryDropdown {
+        width: 100%;
+    }
 }
 
 
