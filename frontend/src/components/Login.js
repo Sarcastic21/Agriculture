@@ -1,39 +1,45 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // We need `useNavigate` to redirect
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/Login.css";
-import image from "../assets/Oip.jpg"; // Correct path to your assets folder
+import image from "../assets/Oip.jpg";
 
 const Login = () => {
   const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Hook to navigate programmatically
+  const [loading, setLoading] = useState(false); // New loading state
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Send login credentials to the backend
-    const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/users/login`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ mobile, password }),
-    });
-    
+    setLoading(true); // Show spinner
 
-    const data = await response.json();
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/users/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mobile, password }),
+      });
 
-    if (response.ok) {
-      // Store the JWT token and role in localStorage
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("role", data.user.role); // Save role in localStorage
+      const data = await response.json();
+      
+      if (response.ok) {
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("role", data.user.role);
 
-      // Redirect based on user role
-      if (data.user.role === "Buyer") {
-        navigate("/buyer-profile"); // Navigate to Buyer profile page
-      } else if (data.user.role === "Seller") {
-        navigate("/seller-profile"); // Navigate to Seller profile page
+        // Redirect based on user role
+        if (data.user.role === "Buyer") {
+          navigate("/buyer-profile");
+        } else if (data.user.role === "Seller") {
+          navigate("/seller-profile");
+        }
+      } else {
+        alert(data.message);
       }
-    } else {
-      alert(data.message); // Show error message if login fails
+    } catch (error) {
+      console.error("Login Error:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false); // Hide spinner
     }
   };
 
@@ -57,14 +63,22 @@ const Login = () => {
             required
           />
           <div className="login-links">
-            <Link to="/forgot-password" className="forgot-link">Forgot Password  -  Reset</Link>
+            <Link to="/forgot-password" className="forgot-link">
+              Forgot Password - Reset
+            </Link>
           </div>
-          <button type="submit" className="submit-btn">Submit</button>
+
+          {/* Submit button with loading spinner */}
+          <button type="submit" className="submit-btn" disabled={loading}>
+            {loading ? <div className="spinner"></div> : "Submit"}
+          </button>
         </form>
+
         <p className="register-text">
           Don't have an account? <Link to="/register">Register</Link>
         </p>
       </div>
+
       <div className="login-image">
         <img src={image} alt="Farmer" />
       </div>
